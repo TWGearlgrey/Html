@@ -1,0 +1,126 @@
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {list-style: none;}
+a {text-decoration: none; color: #111; font: 12px "Dotum"; }
+
+#container {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    border-bottom: 28px solid #9ab2c5;
+    box-sizing: border-box;
+}
+header > div {
+    position: relative;
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+}
+.log {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+header > div > ul {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 28px;
+    list-style: none;
+}
+header > div > ul > li {
+    float: left;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    background: #becedb;
+    border-right: 1px solid white;
+    box-sizing: border-box;
+}
+header > div > ul > li:nth-of-type(1) {
+    border-left: 1px solid white;
+    box-sizing: border-box;
+}
+header li > a {
+    font-weight: bold;
+    color: white;
+}
+
+main{
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+}
+main > section {
+    position: relative;
+    width: 100%;
+    height: 620px;
+    margin-top: 30px;
+    background-image: url(../image/main_bg.png);
+}
+main > section > div {
+    float: left;
+    width: 200px;
+    height: 200px;
+}
+.box1 {background-image: url(../image/main_box1_bg.png);}
+.box2 {background-image: url(../image/main_box2_bg.png);}
+.box3 {background-image: url(../image/main_box3_bg.png);}
+.box4 {background-image: url(../image/main_box4_bg.png);}
+.box5 {background-image: url(../image/main_box5_go.png);}
+.box6 {background-image: url(../image/main_box6_go.png);}
+.box7 {background-image: url(../image/main_box7_bg.png);}
+
+.box1 > img {margin-top: -30px;}
+
+.box2 > img {position: absolute;}
+.box2 > img:nth-of-type(1) {margin-top: 28px; margin-left: 20px;}
+.box2 > img:nth-of-type(2) {margin-top: 60px; margin-left: 20px;}
+.box2 > img:nth-of-type(3) {margin-top: 95px; margin-left: 10px;}
+
+.box3 {
+    float: left;
+    text-align: center;
+}
+.box3 > img:nth-child(2) {
+    clear: left;
+}
+
+
+main > section > div:nth-of-type(5) {
+    clear: left;
+}
+main > section > div:nth-of-type(7) {
+    clear: left;
+    margin-left: 200px;
+}
+main > article {
+    width: 100%;
+    height: 150px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+main > article > div {
+    float: left;
+    width: 25%;
+    height: 100%;
+    border: 1px solid green;
+    box-sizing: border-box;
+}
+
+
+footer {
+    width: 1000px;
+    height: 100px;
+    border: 1px solid red;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
