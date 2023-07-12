@@ -1,0 +1,260 @@
+            /* 초기화 */
+            * {
+                margin: 0;
+                padding: 0;
+                font: nomal 12px '고딕';
+            }
+            ul, ol {list-style: none;}
+            a {text-decoration: none; color: #111;}
+            h3 {font-size: 14px;}
+            
+            header {
+                width: 100%;
+                height: 80px;
+                background-image: url(../image/header_bg.gif);
+            }
+            header > div {
+                position: relative;
+                width: 1000px;
+                height: 100%;
+                margin: 0 auto;
+            }
+            header > div > a {
+                position: absolute;
+                top: 6px;
+            }
+            header > div > ul {
+                position: absolute;
+                right: 0;
+                top: 18px;
+            }
+            header > div > ul > li {
+                width: 124px;
+                height: 32px;
+                float: left;
+                text-align: right;
+                font-size: 17px;
+                font-weight: bold;
+            }
+            .headerInfo {
+                position: absolute;
+                width: 100%;
+                height: 30px;
+                bottom: 0;
+            }
+            .headerInfo > a:nth-of-type(1) {
+                position: absolute;
+                bottom: -1px;
+            }
+            .headerInfo > a > img {
+                width: 90px;
+                height: 23px;
+            }
+            .headerInfo > a:nth-of-type(2) {
+                position: absolute;
+                left: 107px;
+                bottom: 7px;
+                font-size: 12px;
+                color: #555;
+            }
+            .headerInfo > img {
+                position: absolute;
+                left: 100px;
+                bottom: 10px;
+            }
+            
+
+            main {
+                width: 1000px;
+                height: 100%;
+                margin: 5px auto;
+            }
+            main > div {
+                overflow: hidden;
+            }
+            main > div > div {
+                border: 1px solid #d7d7d7;
+                box-sizing: border-box;
+            }
+            .banner {
+                position: relative;
+                float: left;
+                width: 670px;
+                height: 320px;
+                background-image: url(../image/main_banner_bg.jpg);
+            }
+            .banner > img {
+                position: absolute;
+                top: 100px;
+                left: 160px;
+            }
+            .banner > ul {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .banner > ul > img {
+                float: right;
+                width: 81px;
+                height: 72px;
+                border-left: 1px solid #d7d7d7;
+                box-sizing: border-box;
+            }
+            .banner > ul > li {
+                float: right;
+                border-top: 1px solid #d7d7d7;
+                border-left: 1px solid #d7d7d7;
+                box-sizing: border-box;
+                width: 81px;
+                height: 41px;
+                text-align: center;
+                line-height: 40px;
+                font-size: 14px;
+                font-weight: bold;
+                background-color: #f2f2f2;
+            }
+            .banner > ul > li {
+                clear: right;
+            }
+            .banner > ul > li:hover {
+                background: #fefefe;
+            }
+
+            .call {
+                float: right;
+                width: 326px;
+                height: 133px;
+                background: #f2f2f2;
+            }
+            .call {
+                position: relative;
+            }
+            .call > img { position: absolute; }
+            .call > img:nth-of-type(1) {top: 0; right: 0;}
+            .call > img:nth-of-type(2) {top: 20px; left: 20px;}
+            .call > img:nth-of-type(3) {top: 46px; left: 20px;}
+            .call > img:nth-of-type(4) {bottom: 20px; left: 20px;}
+            .qna {
+                float: right;
+                width: 326px;
+                height: 182px;
+                margin-top: 5px;
+                padding: 20px;
+            }
+            .qna > h3 {
+                font-size: 14px;
+                margin-bottom: 3px;
+            }
+            .qna > table {
+                border-spacing: 0px 4px;
+            }
+            .qna > table td {
+                font-size: 12px;
+                color: #6a6a6a;
+            }
+            main > section {
+                overflow: hidden;
+            }
+            main > section > aside {
+                float: left;
+                width: 195px;
+                height: 760px;
+                margin-top: 5px;
+                border: 1px solid #d7d7d7;
+                box-sizing: border-box;
+            }
+            .notice {
+                width: 100%;
+                height: 204px;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .notice > h3 {
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+            .notice > table {
+                font-size: 12px;
+                border-spacing: 0px 4px;
+            }
+            .quick {
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .quick > a {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 34px;
+                border: 1px solid #d9d9d9;
+                margin-top: 6px;
+                background-color: #f2f2f2;
+            }
+            .quick > a > img {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+            }
+            .quick > a:nth-of-type(1) > img {top: 4px;}
+            .quick > a:nth-of-type(2) > img {top: 7px;}
+            .quick > a:nth-of-type(3) > img {top: 11px;}
+
+            .ect > a {
+                position: relative;
+                left: -1px;
+                display: block;
+                width: 195px;
+                height: 83px;
+                border: 1px solid #999;
+                box-sizing: border-box;
+            }
+            .ect > a:nth-of-type(1) {
+                margin-top: 4px;
+            }
+            .ect > a:nth-of-type(2) {
+                margin-top: 6px;
+            }
+            .ect > a > img:nth-of-type(1) {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+            .ect > a > img:nth-of-type(2) {
+                position: absolute;
+                right: 0;
+            }
+            .ad {
+                position: relative;
+                left: -1px;
+                display: block;
+                margin-top: 6px;
+                width: 195px;
+                height: 167px;
+                border: 1px solid #999;
+                box-sizing: border-box;
+            }
+            .ad > a > img {
+                position: absolute;
+            }
+            .ad > a > img:nth-of-type(1) {
+                top: 0;
+                right: 0;
+            }
+            .ad > a > img:nth-of-type(2) {
+                top: 80px;
+                left: 10px;
+            }
+            .ad > a > img:nth-of-type(3) {
+                top: 50px;
+                left: 10px;
+            }
+
+            main > section > article {
+                float: right;
+                width: 800px;
+                height: 250px;
+                margin-top: 5px;
+                border: 1px solid green;
+                box-sizing: border-box;
+            }
+
