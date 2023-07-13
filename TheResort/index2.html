@@ -2,86 +2,261 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>TheResort Layout</title>
-        <link rel="stylesheet" href="./css/style2.css">
+        <title>TheResort</title>
+        <style>
+            /* 초기화 */
+            * {
+                margin: 0;
+                padding: 0;
+                font: normal 12px '돋움';
+            }
+            ul, ol {list-style: none;}
+            a {text-decoration: none; color: #111;}
+
+            #container {
+                width: 100%;
+                height: auto;
+            }
+
+            header {
+                width: 100%;
+                height: 100px;
+                background-image: url(./image/header_bg.png);
+                background-repeat: repeat-x;
+                background-position: bottom;
+            }
+
+            header > div {
+                position: relative;
+                width: 1000px;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            header > div > .gnb {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 28px;
+            }
+
+            header > div > .gnb > li {
+                float: left;
+                width: 20%;
+                height: 100%;
+                border-left: 1px solid #fff;
+                box-sizing: border-box;
+            }
+            header > div > .gnb > li:last-child {
+                border-right: 1px solid #fff;
+            }
+
+            header > div > .gnb > li > a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: 28px;
+                color: #fff;
+                font-weight: bold;
+                background: #becedb;
+            }
+
+            header > div > p {
+                position: absolute;
+                right: 0;
+                top: 10px;
+            }
+
+            main {
+                width: 1000px;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            main > div {
+                width: 100%;
+                height: 620px;
+                margin-top: 28px;
+                background-image: url(./image/main_bg.png);
+            }
+
+            main > div > .box {
+                position: relative;
+                float: left;
+                width: 200px;
+                height: 200px;
+            }
+
+            main > div > .box1 {
+                position: relative;
+                background-image: url(./image/main_box1_bg.png);
+            }
+            main > div > .box1 > img:nth-of-type(1) {
+                position: absolute;
+                top: -29px;
+            }
+            main > div > .box1 > img:nth-of-type(2) {
+                position: absolute; 
+                top: 6px;
+            }
+
+            main > div > .box2 {background-image: url(./image/main_box2_bg.png);}
+            main > div > .box3 {background-image: url(./image/main_box3_bg.png);}
+            main > div > .box4 {background-image: url(./image/main_box4_bg.png);}
+            main > div > .box5 {background-image: url(./image/main_box5_bg.jpg);
+                clear: left;}
+            main > div > .box6 {background-image: url(./image/main_box6_bg.jpg)}
+            main > div > .box7 {
+                clear: left; 
+                margin-left: 200px;
+                background-image: url(./image/main_box7_bg.png)
+            }
+            
+            main > div > .box > .hot {position: absolute; left: 0; top: 0;}
+            main > div > .box > .tit {position: absolute; left: 18px; top: 24px;}
+            main > div > .box > .txt {position: absolute; left: 18px; top: 58px;}
+            main > div > .box > .img {position: absolute; right: 0; bottom: 0;}
+
+            main > section {
+                width: 100%;
+                height: 150px;
+                border-top: 1px solid #becedb;
+            }
+
+            main > section > article {
+                position: relative;
+                float: left;
+                width: 25%;
+                height: 100%;
+                padding-top: 20px;
+                box-sizing: border-box;
+            }
+
+            main > section > article > .artMenu {
+                position: absolute;
+                top: 20px;
+            }
+
+            main > section > article > .artInfo {
+                position: absolute;
+                top: 43px;
+            }
+
+            main > section > article:first-child > .artInfo {
+                position: absolute;
+                top: 47px;
+            }
+
+            main > section > article > .artInfo td {
+                color: #808080;
+                line-height: 18px;
+            }
+
+            main > section > article > .artInfo td > a {
+                color: #555555;
+            }
+
+            main > section > article > .gallery {
+                position: absolute;
+                top: 53px;
+            }
+
+            main > section > article > .gallery > a > img {
+                width: 75px;
+                height: 55px;
+            }
+
+            footer {
+                width: 1000px;
+                height: 100px;
+                border-top: 1px solid #becedb;
+                box-sizing: border-box;
+                margin: 0 auto;
+            }
+
+            footer > img {
+                float: left;
+                padding-top: 14px;
+            }
+
+            footer > p {
+                display: inline-block;
+                padding-left: 20px;
+                margin-top: 20px;
+                font-size: 11px;
+                color: #555555;
+                line-height: 20px;
+            }
+            footer > p > span {
+                padding-top: 4px;
+                color: #999999;
+                font-family: 'Verdana';
+            }
+            footer > p > span > span {
+                color: #5d99b5;
+            }
+
+        </style>
     </head>
     <body>
         <div id="container">
             <header>
                 <div>
-                    <ul>
-                        <a href="index.html"><img src="./image/header_logo.png" alt=""></a>
+                    <a href="index2.html" class="logo"><img src="./image/header_logo.png" alt="THE RESORT"></a>
+                    <ul class="gnb">
+                        <li><a href="#">INTRODUCTION</a></li>
+                        <li><a href="#">ROOM</a></li>
+                        <li><a href="#">TRAVEL</a></li>
+                        <li><a href="#">INFORMATION</a></li>
+                        <li><a href="#">COMMUNITY</a></li>
                     </ul>
-                    <div class="lnb">
-                        <span>
-                            <a href="#">회원가입</a>
-                        </span>
-                        <span>
-                            <a href="#">로그인</a>
-                        </span>
-                        <span>
-                            <a href="#">고객센터</a>
-                        </span>
-                    </div>
-                    <nav class="gnb">
-                        <a href="#">INTRODUCTION</a>
-                        <a href="#">ROOM</a>
-                        <a href="#">TRAVEL</a>
-                        <a href="#">INFORMATION</a>
-                        <a href="#">COMMUNITY</a>
-                    </nav>
+                    <p>
+                        <a href="#">회원가입</a> |
+                        <a href="#">로그인</a> |
+                        <a href="#">고객센터</a>
+                    </p>
                 </div>
             </header>
-
-            <main id="cotent">
-                <div></div>
-                <div class="mama">
-                    <div id="article">
-                        <div class="box1">
-                            <img src="./image/main_box1_img.png" alt="나뭇잎">
-                            <img src="./image/main_box1_txt.png" alt="첫번째">
-                        </div>
-                        <div>
-                            <img src="./image/main_box2_tit.png" alt="두번째2">
-                            <img src="./image/main_box2_txt.png" alt="두번째">
-                            <img src="./image/main_box2_img.png" alt="두번째3">
-                        </div>
-                        <div>
-                            <img src="./image/main_box3_hot.png" alt="세번째">
-                            <img src="./image/main_box3_tit.png" alt="세번째2">
-                            <img src="./image/main_box3_txt.png" alt="세번째3">
-                            <img src="./image/main_box3_img.png" alt="세번째4">
-                        </div>
-                        <div>
-                            <img src="./image/main_box4_tit.png" alt="네번째">
-                            <img src="./image/main_box4_txt.png" alt="네번째2">
-                            <img src="./image/main_box4_img.png" alt="네번째3">
-                        </div>
-                        <div>
-                            <img src="./image/main_box5_go.png" alt="다섯번째">
-                        </div>
-                        <div>
-                            <img src="./image/main_box6_go.png" alt="여섯번째">
-                        </div>
-                        <div>
-                            <img src="./image/main_box7_tit.png" alt="일곱번째">
-                            <img src="./image/main_box7_txt.png" alt="일곱번째2">
-                            <img src="./image/main_box7_img.png" alt="일곱번째3">
-                        </div>
+            <main>
+                <div>
+                    <div class="box box1">
+                        <img src="./image/main_box1_img.png" alt="나뭇가지">
+                        <img src="./image/main_box1_txt.png" alt="여행않는">
                     </div>
-                    <div id="aside">
-                        <img src="./image/main_floating_bg.png" alt="옆">
-                        <img src="./image/main_floating_tit.png" alt="글자">
+                    <div class="box box2">
+                        <img src="./image/main_box2_tit.png" class="tit" alt="투어가이드">
+                        <img src="./image/main_box2_txt.png" class="txt" alt="당신의 발걸음을..">
+                        <img src="./image/main_box2_img.png" class="img" alt="앨범">
+                    </div>
+                    <div class="box box3">
+                        <img src="./image/main_box3_hot.png" class="hot" alt="hot!">
+                        <img src="./image/main_box3_tit.png" class="tit" alt="레저베이션">
+                        <img src="./image/main_box3_txt.png" class="txt" alt="365일 가족처럼">
+                        <img src="./image/main_box3_img.png" class="img" alt="앨범">
+                    </div>
+                    <div class="box box4">
+                        <img src="./image/main_box4_tit.png" class="tit" alt="이벤트">
+                        <img src="./image/main_box4_txt.png" class="txt" alt="행복한 이벤트">
+                        <img src="./image/main_box4_img.png" class="img" alt="앨범">
+                    </div>
+                    <div class="box box5"></div>
+                    <div class="box box6"></div>
+                    <div class="box box7">
+                        <img src="./image/main_box7_tit.png" class="tit" alt="트래픽맵">
+                        <img src="./image/main_box7_txt.png" class="txt" alt="찾아오는길">
+                        <img src="./image/main_box7_img.png" class="img" alt="앨범">
                     </div>
                 </div>
-                <div id="latest">
-                    <div class="info1">
-                        <img src="./image/info.png" alt="정보">
-                        <img src="./image/happy.png" alt="행복">
-                    </div>
-                    <div class="info2">
-                        <img src="./image/reser.png" alt="예약">
-                        <table>
+                <section>
+                    <article>
+                        <img src="./image/info.png" class="artMenu" alt="인포">
+                        <img src="./image/happy.png" class="artInfo" alt="사업자정보">
+                    </article>
+                    <article>
+                        <img src="./image/reser.png" class="artMenu" alt="예약">
+                        <table class="artInfo" >
                             <tbody>
                                 <tr>
                                     <td>></td>
@@ -105,10 +280,10 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="info3">
-                        <img src="./image/notice.png" alt="공지">
-                        <table>
+                    </article>
+                    <article>
+                        <img src="./image/notice.png" class="artMenu" alt="공지">
+                        <table class="artInfo" >
                             <tbody>
                                 <tr>
                                     <td>></td>
@@ -117,7 +292,7 @@
                                 </tr>
                                 <tr>
                                     <td>></td>
-                                    <td><a href="#">풀장을오픈했어요</a></td>
+                                    <td><a href="#">풀장을오픈했어요.</a></td>
                                     <td>04-19</td>
                                 </tr>
                                 <tr>
@@ -132,35 +307,27 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="info4">
-                        <img src="./image/gallery.png" alt="갤러리">
-                        <div id="gal">
-                            <a href="#"><img src="./image/main_latest_gallery1.jpg" alt="갤러리1"></a>
-                            <a href="#"><img src="./image/main_latest_gallery2.jpg" alt="갤러리2"></a>
-                            <a href="#"><img src="./image/main_latest_gallery3.jpg" alt="갤러리3"></a>
+                    </article>
+                    <article>
+                        <img src="./image/gallery.png" class="artMenu" alt="갤러리">
+                        <div class="artInfo gallery" >
+                            <a href="#"><img src="./image/main_latest_gallery1.jpg" alt="풍경"></a>
+                            <a href="#"><img src="./image/main_latest_gallery2.jpg" alt="꽃1"></a>
+                            <a href="#"><img src="./image/main_latest_gallery3.jpg" alt="꽃2"></a>
                         </div>
-                    </div>
-                </div>
+                    </article>
+                </section>
             </main>
-
             <footer>
-                <div id="address">
-                    <img src="./image/footer_logo.png" class="logo" alt="logo">
-                    <p>
-                        (주)리조트 | 대표이사: 홍길동 | 소재지: 부산시 금정구 따듯한동 123-1
-                        <br>
-                        Tel: 070-000-0000/ Fax: 051-000-0000/ 사업자등록번호: 123-12-12345
-                        <br>
-                        <span id="copy">
-                            Copyright ⓒ (c) Since 2013
-                            <span id="resort">Resort</span>
-                            . All rights reserved
-                        </span>
-                    </p>
-
-                </div>
+                <img src="./image/footer_logo.png" alt="리조트바닥로고">
+                <p>
+                    (주)리조트 | 대표이사: 홍길동 | 소재지: 부산시 금정구 따듯한동 123-1<br>
+                    Tel: 070-000-0000/ Fax: 051-000-0000/ 사업자등록번호: 123-12-12345<br>
+                    <span>Copyright ⓒ (c) Since 2013 
+                        <span>Resort</span>
+                        . All rights reserved</span>
+                </p>
             </footer>
-        </div>
+        </div> 
     </body>
 </html>
