@@ -3,7 +3,363 @@
     <head>
         <meta charset="UTF-8">
         <title>부동산113</title>
-        <link rel="stylesheet" href="./css/style.css">
+        <style>
+            /* 초기화 */
+            * {
+                margin: 0;
+                padding: 0;
+                font: nomal 12px '고딕';
+                font-size: 12px;
+            }
+            ul, ol {list-style: none;}
+            a {text-decoration: none; color: #111; }
+            h3 {font-size: 14px;}
+
+            #container {
+                width: 100%;
+                height: auto;
+            }
+
+            header {
+                width: 100%;
+                height: 80px;
+                background-image: url(../image/header_bg.gif);
+            }
+            header > div {
+                position: relative;
+                width: 1000px;
+                height: 100%;
+                margin: 0 auto;
+            }
+            header > div > a {
+                position: absolute;
+                top: 6px;
+            }
+            header > div > ul {
+                position: absolute;
+                right: 0;
+                top: 18px;
+            }
+            header > div > ul > li {
+                width: 124px;
+                height: 32px;
+                float: left;
+                text-align: right;
+                font-size: 17px;
+                font-weight: bold;
+            }
+            header > div > ul > li > a {
+                font-size: 17px;
+            }
+            header > div > ul > li > a:hover {
+                color: #7b231f;
+            }
+            .headerInfo {
+                position: absolute;
+                width: 100%;
+                height: 30px;
+                bottom: -1px;
+            }
+            .headerInfo > a:nth-of-type(1) {
+                position: absolute;
+                bottom: 0px;
+            }
+            .headerInfo > a > img {
+                width: 90px;
+                height: 24px;
+            }
+            .headerInfo > a:nth-of-type(2) {
+                position: absolute;
+                left: 107px;
+                bottom: 8px;
+                font-size: 12px;
+                color: #555;
+            }
+            .headerInfo > a:nth-of-type(2):hover {
+                text-decoration: underline;
+            }
+            .headerInfo > img {
+                position: absolute;
+                left: 100px;
+                bottom: 11px;
+            }
+
+
+            main {
+                width: 1000px;
+                height: 100%;
+                margin: 5px auto;
+            }
+            main > div {
+                overflow: hidden;
+            }
+            main > div > div {
+                border: 1px solid #d7d7d7;
+                box-sizing: border-box;
+            }
+            .banner {
+                position: relative;
+                float: left;
+                width: 670px;
+                height: 320px;
+                background-image: url(../image/main_banner_bg.jpg);
+            }
+            .banner > img {
+                position: absolute;
+                top: 100px;
+                left: 160px;
+            }
+            .banner > ul {
+                position: absolute;
+                width: 80px;
+                height: auto;
+                right: 0;
+                top: 0;
+                border-left: 1px solid #d7d7d7;
+                overflow: hidden;
+            }
+            .banner > ul > img {
+                float: right;
+                width: 81px;
+                height: 72px;
+                margin-right: -1px;
+            }
+            .banner > ul > li {
+                float: right;
+                border-top: 1px solid #d7d7d7;
+                border-left: 1px solid #d7d7d7;
+                box-sizing: border-box;
+                width: 81px;
+                height: 41px;
+                text-align: center;
+                line-height: 40px;
+                font-weight: bold;
+                background-color: #f2f2f2;
+            }
+            .banner > ul > li {
+                clear: right;
+            }
+            .banner > ul > li > a {
+                font-size: 14px;
+            }
+            .banner > ul > li:hover {
+                background: #fefefe;
+            }
+
+            .call {
+                float: right;
+                width: 326px;
+                height: 133px;
+                background: #f2f2f2;
+            }
+            .call {
+                position: relative;
+            }
+            .call > img { position: absolute; }
+            .call > img:nth-of-type(1) {top: 0; right: 0;}
+            .call > img:nth-of-type(2) {top: 20px; left: 20px;}
+            .call > img:nth-of-type(3) {top: 46px; left: 20px;}
+            .call > img:nth-of-type(4) {bottom: 20px; left: 20px;}
+            .qna {
+                float: right;
+                width: 326px;
+                height: 182px;
+                margin-top: 5px;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .qna > h3 {
+                font-size: 14px;
+            }
+            .qna > table {
+                width: 100%;
+                height: auto;
+                border-collapse: collapse;
+                border-spacing: 0;
+                margin-top: 6px;
+            }
+            .qna > table td {
+                color: #6a6a6a;
+            }
+            .qna > table td:nth-child(2) {
+                display: inline-block;
+                width: 219px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                line-height: 20px;
+            }
+            .qna > table td > a {
+                color: #6a6a6a;
+            }
+            .qna > table td > a:hover {
+                text-decoration: underline;
+            }
+            main > section {
+                overflow: hidden;
+            }
+            main > section > aside {
+                float: left;
+                width: 195px;
+                height: 760px;
+                margin-top: 5px;
+                border: 1px solid #d7d7d7;
+                box-sizing: border-box;
+            }
+            .notice {
+                width: 100%;
+                height: 204px;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .notice > h3 {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+            .notice > table {
+                border-spacing: 0;
+            }
+            .notice > table > tbody > tr > td:nth-child(2) {
+                width: 173px;
+                display: inline-block;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                line-height: 20px;
+            }
+            .quick {
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .quick > a {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 34px;
+                border: 1px solid #d9d9d9;
+                margin-top: 6px;
+                background-color: #f2f2f2;
+            }
+            .quick > a > img {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+            }
+            .quick > a:nth-of-type(1) > img {top: 4px;}
+            .quick > a:nth-of-type(2) > img {top: 7px;}
+            .quick > a:nth-of-type(3) > img {top: 11px;}
+
+            .ect > a {
+                position: relative;
+                left: -1px;
+                display: block;
+                width: 195px;
+                height: 83px;
+                border: 1px solid #999;
+                box-sizing: border-box;
+            }
+            .ect > a:nth-of-type(1) {
+                margin-top: 4px;
+            }
+            .ect > a:nth-of-type(2) {
+                margin-top: 6px;
+            }
+            .ect > a > img:nth-of-type(1) {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+            .ect > a > img:nth-of-type(2) {
+                position: absolute;
+                right: 0;
+            }
+            .ad {
+                position: relative;
+                background-image: url(../image/aside_banner_bg.jpg);
+                left: -1px;
+                display: block;
+                margin-top: 6px;
+                width: 195px;
+                height: 167px;
+                border: 1px solid #999;
+                box-sizing: border-box;
+            }
+            .ad > a > img {
+                position: absolute;
+            }
+            .ad > img {
+                position: absolute;
+            }
+            .ad > img:nth-of-type(1) {
+                top: 0px;
+                right: 0px;
+            }
+            .ad > img:nth-of-type(2) {
+                top: 30px;
+                left: 10px;
+            }
+            .ad > a > img {
+                top: 61px;
+                left: 10px;
+            }
+            main > section > article {
+                float: right;
+                width: 800px;
+                height: 250px;
+                margin-top: 5px;
+                padding: 16px;
+                border: 1px solid #d7d7d7;
+                box-sizing: border-box;
+            }
+            main > section > article > ul > li {
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                margin-top: 26px;
+            }
+            main > section > article > ul > li {
+                float: left;
+                width: 20%;
+                height: 100%;
+            }
+            main > section > article > ul > li > a {
+                display: block;
+                text-align: center;
+            }
+            main > section > article > ul > li > a:hover {
+                text-decoration: underline;
+            }
+            main > section > article > h3 > a {
+                float: right;
+            }
+            .smp {
+                width: 150px;
+                height: 100px;
+            }
+
+            footer {
+                width: 1000px;
+                height: 130px;
+                border: 1px solid #d7d7d7;
+                padding: 10px;
+                border-top: 2px solid #777777;
+                box-sizing: border-box;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+            footer > p {
+                display: block;
+                color: #585858;
+                margin-left: 10px;
+                font-size: 11.5px;
+                line-height: 20px;
+            }
+            footer > p > span {
+                display: block;
+                font-weight: bold;
+                margin-top: 4px;
+            }
+        </style>
     </head>
     <body>
         <div id="container">
