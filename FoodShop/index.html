@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>FoodShop</title>
+        <style>
+            /* 초기화 */
+            * {
+                margin: 0;
+                padding: 0;
+                font: normal 12px 'noto sans korean';
+            }
+            ul, ol {list-style: none;}
+            a {text-decoration: none; color: #111;}
+
+
+
+            /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+            /*           컨테이너영역            */
+            /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+            #container {
+                width: 100%;
+                height: 100%;
+            }
+
+
+
+            /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+            /*            헤더 영역              */
+            /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+            header {
+                width: 100%;
+                height: auto;
+            }
+
+            header > div {
+                width: 100%;
+            }
+
+            header > div > * {
+                width: 1100px;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            header > div:nth-child(1) {height: 36px; border-bottom: 1px solid #dcdcdc; box-sizing: border-box;}
+            header > div:nth-child(2) {height: 100px;}
+            header > div:nth-child(3) {height: 54px; background-color: #40382e;}
+
+
+            /* ~~~~~ 로그인 영역 ~~~~~ */
+            header > div > div > p {
+                float: right;
+                margin-top: 10px;
+            }
+
+
+            /* ~~~~~ 배너 영역 ~~~~~ */
+            header > div > article {position: relative;}
+
+            header > div > article > a {position: absolute;}
+
+            header > div > article > a:nth-child(1) {left: 10px; bottom: 10px;}
+            header > div > article > a:nth-child(2) {left: 50%; top: 20px; margin-left: -173px;}
+            header > div > article > a:nth-child(3) {right: 0; bottom: 20px;}
+
+            header > div > article > a > span:nth-of-type(1) {color: #ff6a00; font-size: 15px; font-weight: 500;}
+            header > div > article > a > span:nth-of-type(2) {font-size: 12px;}
+
+            /* ~~~~~ 탑 메뉴 영역 ~~~~~ */
+            header > div > nav {}
+
+            header > div > nav > ul {}
+
+            header > div > nav > ul > li {
+                float: left;
+                width: 11.11%;
+                height: 100%;
+            }
+
+            header > div > nav > ul > li > a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: 54px;
+                font-size: 15px;
+                font-weight: bold;
+                color: #fff;
+            }
+
+            header > div > nav > ul > li > a:hover {color: #ff6a00;}
+
+
+
+            /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+            /*            메인 영역              */
+            /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+            main {
+                width: 100%;
+                height: auto;
+            }
+
+            main > section {
+                width: 100%;
+                height: auto;
+            }
+
+            main > section:nth-child(1) {height: 352px;}
+            main > section:nth-child(2) {height: 520px;}
+            main > section:nth-child(3) {height: 190px;}
+            main > section:nth-child(4) {height: 660px;}
+            main > section:nth-child(5) {height: 200px;}
+            main > section:nth-child(6) {height: 660px;}
+
+            main > section > article {
+                width: 1100px;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            /* ~~~~~ 메인 배너(자연의 신선함! 주문즉시 잔지에서 직접 배송!) ~~~~~ */
+            main > .slider {background-color: #ffeed4;}
+
+
+            /* ~~~~~ 메인에서 각종 메뉴 바로가기 ~~~~~ */
+            main > .go > article {
+                padding: 30px 10px;
+                box-sizing: border-box;
+            }
+
+            main > .go div {
+                float: left;
+            }
+
+            main > .go div:nth-child(1) {
+                width: 412px; 
+                height: 450px;
+                background-image: url(./image/main_go_banner_bg1.jpg);
+            }
+
+            main > .go div:nth-child(2) {
+                width: 322px; 
+                height: 220px; 
+                margin-left: 11px;
+                background-image: url(./image/main_go_banner_bg2.jpg);
+            }
+
+            main > .go div:nth-child(3) {
+                width: 322px; 
+                height: 220px; 
+                float: right;
+                background-image: url(./image/main_go_banner_bg3.jpg);
+            }
+
+            main > .go div:nth-child(4) {
+                width: 322px; 
+                height: 220px; 
+                margin-left: 11px; 
+                margin-top: 10px;
+                background-image: url(./image/main_go_banner_bg4.jpg);
+            }
+
+            main > .go div:nth-child(5) {
+                width: 322px; 
+                height: 220px; 
+                float: right; 
+                margin-top: 10px;
+                background-image: url(./image/main_go_banner_bg5.jpg);
+            }
+
+            main > .go > article > div {position: relative;}
+            main > .go > article > div > a {position: absolute; left: 26px; top: 138px;}
+            main > .go > article > div:first-child > a {position: absolute; left: 36px; top: 246px;}
+
+
+            /* ~~~~~ 원데이 & 프리미엄 영역 ~~~~~ */
+            main > .ad_title {
+                background-size: cover;
+                background-position: 50% center;
+            }
+
+            main > .oneday {
+                background-image: url(./image/oneday_bg.png);
+            }
+            main > .premium {
+                background-image: url(./image/premium_bg.png);
+            }
+
+            main > .oneday img {margin-top: 50px;}
+
+            main > .premium > article {text-align: center;}
+            main > .premium img {margin-top: 52px;}
+
+
+            /* ~~~~~ 채소 & 씨푸드 영역 ~~~~~ */
+            main > .foodlayer {
+                padding: 60px 0px 40px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            main > .foodlayer > article > ul {
+                width: 100%;
+                height: 312px;
+                margin-top: 36px;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            main > .foodlayer > article > ul > li {
+                float: left;
+                width: 25%;
+                height: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            main > .foodlayer .gallary a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            main > .foodlayer .gallary img {
+                width: 100%;
+                height: 170px;
+                object-fit: cover;
+            }
+
+            main > .foodlayer .gallary h1 {
+                font-size: 20px; 
+                font-weight: bold; 
+                color: #41392f; 
+                margin-top: 12px;
+            }
+
+            main > .foodlayer .gallary p {
+                font-size: 13px; 
+                font-weight: bold; 
+                color: #959595; 
+                margin: 12px 0px 26px;
+            }
+
+            main > .foodlayer .gallary h2 {
+                font-size: 20px; 
+                font-weight: bold; 
+                color: #ff6a00;
+            }
+            
+
+            /* ~~~~~ '전체상품보기' 버튼 영역 ~~~~~ */
+            main .foodlayer > article > .btn {
+                display: block;
+                width: 300px;
+                height: 50px;
+                border: 1px solid #efefef;
+                text-align: center;
+                line-height: 50px;
+                margin: 56px auto 0;
+                color: #626262;
+                font-size: 15px;
+                font-weight: bold;
+                box-shadow: 0px 2px 2px #999;
+            }
+
+            main .foodlayer > article > .btn:hover {
+                border: 1px solid #999;
+                box-sizing: border-box;
+            }
+
+
+            
+            /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+            /*            풋터 영역              */
+            /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+            footer {
+                width: 100%;
+                height: auto;
+            }
+
+            footer > div {
+                width: 100%;
+            }
+
+            footer > div:nth-child(1) {
+                height: 50px;
+                background-color: #626262;
+            }
+            footer > div:nth-child(2) {
+                height: 156px;
+                background-color: #434343;
+            }
+
+            footer > div > div {
+                width: 1100px;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            footer .foot_menu > p {
+                display: inline-block;
+                color: #eee;
+                font-size: 15px;
+                font-weight: bold;
+                margin-top: 14px;
+            }
+            footer .foot_menu > p > a {
+                color: inherit;
+                font-size: inherit;
+                font-weight: inherit;
+            }
+
+            footer .foot_menu > p > a:first-child {color: #ff6a00;}
+
+            footer .foot_info > p {
+                display: inline-block;
+                margin-top: 16px;
+                color: #aca9a9;
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 26px;
+            }
+            footer .foot_info > img {
+                float: right; 
+                margin-top: 16px;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+
+            <header>
+                <div>
+                    <div>
+                        <p>
+                            <a href="#">로그인</a> |
+                            <a href="#">마이페이지</a> |
+                            <a href="#">관심상품(0)</a> |
+                            <a href="#">장바구니(0)</a>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <article>
+                        <a href="#">
+                            <img src="./image/ico_shopping.png" alt="쇼핑주문조회">
+                            <span>SHOPPING</span>
+                            <span>주문조회 바로가기</span>
+                        </a>
+                        <a href="#"><img src="./image/header_txt_logo.png" alt="쇼핑몰로고"></a>
+                        <a href="#"><img src="./image/header_txt_onday.png" alt="원데이번장"></a>
+                    </article>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            <li><a href="#">채소/과일/곡류</a></li>
+                            <li><a href="#">수산</a></li>
+                            <li><a href="#">정육/달걀</a></li>
+                            <li><a href="#">면/양념/소스</a></li>
+                            <li><a href="#">음료/주류</a></li>
+                            <li><a href="#">냉장/냉동식품</a></li>
+                            <li><a href="#">캔/통조림</a></li>
+                            <li><a href="#">가공/간편식품</a></li>
+                            <li><a href="#">생활잡화</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <main>
+                <section class="slider">
+                    <article>
+                        <img src="./image/slider_banner1.jpg" alt="자연의 신선함! 주문즉시 산지에서 직접 배송!">
+                    </article>
+                </section>
+                <section class="go">
+                    <article>
+                        <div><a href="#"><img src="./image/main_go_ico.png" alt="go아이콘"></a></div>
+                        <div><a href="#"><img src="./image/main_go_ico.png" alt="go아이콘"></a></div>
+                        <div><a href="#"><img src="./image/main_go_ico.png" alt="go아이콘"></a></div>
+                        <div><a href="#"><img src="./image/main_go_ico.png" alt="go아이콘"></a></div>
+                        <div><a href="#"><img src="./image/main_go_ico.png" alt="go아이콘"></a></div>
+                    </article>
+                </section>
+                <section class="oneday ad_title">
+                    <article>
+                        <a href="#"><img src="./image/oneday_txt.png" alt="원데이 번개장터"></a>
+                    </article>
+                </section>
+                <section class="vegetable foodlayer">
+                    <article>
+                        <img src="./image/vegetable_tit.png" class="title" alt="1일1야채로 건강한 생활습관">
+                        <ul class="gallary">
+                            <li><a href="#"><img src="./image/thumb1.jpg" alt="요거트"><h1>플레인요거트 4개입</h1><p>견과류, 과일과 같이 먹는 플레인 요거트</p><h2>7,500원</h2></a></li>
+                            <li><a href="#"><img src="./image/thumb2.jpg" alt="더치커피"><h1>프랑스 더치커피</h1><p>프랑스만의 방식으로 내려진 더치커피</p><h2>5,000원</h2></a></li>
+                            <li><a href="#"><img src="./image/thumb3.jpg" alt="홍차"><h1>로얄밀크 홍차</h1><p>일본에서 온 깊고 풍부한맛의 로얄밀크티</p><h2>17,000원</h2></a></li>
+                            <li><a href="#"><img src="./image/thumb4.jpg" alt="핫초코"><h1>스위스 핫초코 320g</h1><p>스위스에서 온 핫초코로 따뜻한 연말</p><h2>4,000원</h2></a></li>
+                        </ul>
+                        <a href="#" class="btn">전체 상품 보기</a>
+                    </article>
+                </section>
+                <section class="premium ad_title">
+                    <article>
+                        <a href="#"><img src="./image/main_premium_tit.png" alt="프리미엄"></a>
+                    </article>
+                </section>
+                <section class="seafood foodlayer">
+                    <article>
+                        <img src="./image/seafood_tit.png" class="title" alt="신선하고 담백한 해산물">
+                        <ul class="gallary">
+                            <li><a href="#"><img src="./image/thumb1.jpg" alt="요거트"><h1>플레인요거트 4개입</h1><p>견과류, 과일과 같이 먹는 플레인 요거트</p><h2>7,500원</h2></a></li>
+                            <li><a href="#"><img src="./image/thumb2.jpg" alt="더치커피"><h1>프랑스 더치커피</h1><p>프랑스만의 방식으로 내려진 더치커피</p><h2>5,000원</h2></a></li>
+                            <li><a href="#"><img src="./image/thumb3.jpg" alt="홍차"><h1>로얄밀크 홍차</h1><p>일본에서 온 깊고 풍부한맛의 로얄밀크티</p><h2>17,000원</h2></a></li>
+                            <li><a href="#"><img src="./image/thumb4.jpg" alt="핫초코"><h1>스위스 핫초코 320g</h1><p>스위스에서 온 핫초코로 따뜻한 연말</p><h2>4,000원</h2></a></li>
+                        </ul>
+                        <a href="#" class="btn">전체 상품 보기</a>
+                    </article>
+                </section>
+            </main>
+
+            <footer>
+                <div>
+                    <div class="foot_menu">
+                        <p>
+                            <a href="#">이용약관</a> | 
+                            <a href="#">이용안내</a> | 
+                            <a href="#">개인정보취급방침</a>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="foot_info">
+                        <p>
+                            상호명 : 쇼핑몰   대표 : 홍길동   메일 : master@foodshop.com<br>
+                            통신판매업신고번호 : 123-456-7890   사업자등록번호 : 123-45-7890   대표번호 : 070-1234-5678<br>
+                            팩스번호 : 051-1234-5678   개인정보관리자 : 김유신   주소 : 부산시 부산진구 서전로 123
+                        </p>
+                        <img src="./image/footer_tel.png" alt="계좌번호">
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
